@@ -1,31 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Projeto integrador IFA/MAT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessibilidade Visual</title>
+  <style>
+    /*
+      Diretrizes de Acessibilidade Aplicadas:
+      - Tema Lilás/Roxo Claro: Fundo escuro em tom violeta para reduzir o cansaço visual.
+      - Alto Contraste: Texto branco e destaques em amarelo para garantir leitura perfeita (compatível com daltonismo).
+      - Tipografia limpa, grande e com espaçamento amplo.
+      - Foco visível destacado para navegação por teclado.
+    */
+    :root {
+      --bg-color: #1a162b;        /* Roxo escuro para o fundo geral */
+      --card-bg: #2d2447;        /* Roxo médio para os cartões */
+      --accent-color: #d8b4fe;    /* Roxo claro (lilás) para bordas e detalhes */
+      --highlight-color: #ffee55; /* Amarelo de alto contraste para foco e textos principais */
+      --text-color: #ffffff;      /* Texto principal em branco */
+      --border-color: #b892ff;    /* Borda em lilás visível */
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 24px;
+      line-height: 1.8;
+      font-size: 1.25rem;
+    }
+
+    /* Indicador de foco bem visível para navegação via teclado */
+    :focus {
+      outline: 4px solid var(--highlight-color);
+      outline-offset: 4px;
+    }
+
+    header {
+      border-bottom: 4px solid var(--accent-color);
+      padding-bottom: 16px;
+      margin-bottom: 32px;
+      background-color: #231b38;
+      padding: 24px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--highlight-color);
+      margin: 0 0 8px 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-top: 40px;
+      border-left: 6px solid var(--highlight-color);
+      padding-left: 12px;
+    }
+
+    p {
+      max-width: 900px;
+    }
+
+    /* Grade para Galeria de Imagens */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 3px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid var(--accent-color);
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+
+    /* Seção de Vídeos */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .video-container {
+      background-color: var(--card-bg);
+      border: 3px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 6px;
+      background-color: #000;
+      border: 2px solid var(--accent-color);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 24px;
+      border-top: 4px solid var(--accent-color);
+      text-align: center;
+      font-size: 1.1rem;
+      background-color: #231b38;
+      border-radius: 8px;
+    }
+  </style>
 </head>
-
 <body>
-    <h1>projeto desenvolvido na disciplina de progamação no itinerário de matemática.</h1>
-    <div>
-        <img src="imagem.jpg" alt="maquete">
-    </div>
-    <h2>O que é Acessibilidade Visual</h2>
-    <p>A acessibilidade visual refere-se à capacidade de tornar informações visuais acessíveis a todas as pessoas,
-        independentemente de suas limitações visuais. Isso inclui a criação de designs e conteúdos que possam ser
-        facilmente compreendidos por pessoas com deficiência visual, como cegueira ou baixa visão.</p>
-    <img src="imagem 02.jpg" alt="maquete">
-    <p>A programação de computadores é a base invisível que sustenta a era digital moderna.
-        Mais do que apenas escrever linhas de código, programar é a arte de traduzir problemas complexos em instruções
-        lógicas que o computador possa executar, transformando ideias em softwares, aplicativos e automações funcionais.
-        Este trabalho tem como objetivo explorar os conceitos fundamentais dessa ciência, destacando sua importância no
-        desenvolvimento tecnológico atual e como a lógica de programação se tornou uma habilidade essencial para o
-        futuro</p>
 
-    <img src="imagem 03.jpg" alt="maquete">
+  <header role="banner">
+    <h1>Acessibilidade Visual</h1>
+    <p>Portal informativo adaptado para pessoas com baixa visão e daltonismo em tons lilás.</p>
+  </header>
+
+  <main role="main">
+    <section>
+      <h2>O que é Acessibilidade Visual?</h2>
+      <p>
+        A acessibilidade visual é o conjunto de práticas, ferramentas e recursos projetados para garantir que pessoas com diferentes graus de deficiência visual — desde o daltonismo até a baixa visão e a cegueira total — possam navegar, compreender e interagir com ambientes físicos e digitais com autonomia e segurança.
+      </p>
+      <p>
+        No ambiente digital, isso envolve utilizar alto contraste de cores, permitir o aumento do tamanho dos textos sem perda de funcionalidade, disponibilizar descrições detalhadas para imagens (texto alternativo) e garantir a navegação completa através do teclado ou leitores de tela.
+      </p>
+    </section>
+
+    <section id="galeria">
+      <h2>Galeria de Imagens (8 Espaços)</h2>
+      <p>Todas as imagens possuem alto contraste e textos descritivos detalhados para leitores de tela.</p>
+      
+      <div class="gallery-grid">
+        <article class="card">
+          <img src="https://via.placeholder.com/400x220/2d2447/d8b4fe?text=Imagem+1" alt="Exemplo 1: Descrição detalhada do conteúdo da imagem para leitores de tela.">
+          <p><strong>Imagem 1:</strong> Descrição legível com borda lilás.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/400x220/2d2447/d8b4fe?text=Imagem+2" alt="Exemplo 2: Descrição detalhada do conteúdo da imagem para leitores de tela.">
+          <p><strong>Imagem 2:</strong> Descrição legível com borda lilás.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/400x220/2d2447/d8b4fe?text=Imagem+3" alt="Exemplo 3: Descrição detalhada do conteúdo da imagem para leitores de tela.">
+          <p><strong>Imagem 3:</strong> Descrição legível com borda lilás.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/400x220/2d2447/d8b4fe?text=Imagem+4" alt="Exemplo 4: Descrição detalhada do conteúdo da imagem para leitores de tela.">
+          <p><strong>Imagem 4:</strong> Descrição legível com borda lilás.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/400x220/2d2447/d8b4fe?text=Imagem+5" alt="Exemplo 5: Descrição detalhada do conteúdo da imagem para leitores de tela.">
+          <p><strong>Imagem 5:</strong> Descrição legível com borda lilás.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/400x220/2d2447/d8b4fe?text=Imagem+6" alt="Exemplo 6: Descrição detalhada do conteúdo da imagem para leitores de tela.">
+          <p><strong>Imagem 6:</strong> Descrição legível com borda lilás.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/400x220/2d2447/d8b4fe?text=Imagem+7" alt="Exemplo 7: Descrição detalhada do conteúdo da imagem para leitores de tela.">
+          <p><strong>Imagem 7:</strong> Descrição legível com borda lilás.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://via.placeholder.com/400x220/2d2447/d8b4fe?text=Imagem+8" alt="Exemplo 8: Descrição detalhada do conteúdo da imagem para leitores de tela.">
+          <p><strong>Imagem 8:</strong> Descrição legível com borda lilás.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="videos">
+      <h2>Vídeos Explicativos (2 Espaços)</h2>
+      <div class="video-grid">
+        <article class="video-container">
+          <video controls aria-label="Vídeo 1: Explicação sobre recursos de tecnologia assistiva.">
+            <source src="seu-video-1.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+          <p><strong>Vídeo 1:</strong> Introdução aos recursos de tecnologia assistiva.</p>
+        </article>
+
+        <article class="video-container">
+          <video controls aria-label="Vídeo 2: Demonstração de navegação por leitores de tela.">
+            <source src="seu-video-2.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+          <p><strong>Vídeo 2:</strong> Como leitores de tela interpretam páginas web.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 - Portal de Acessibilidade Visual. Desenvolvido sob as diretrizes WCAG com tema roxo claro.</p>
+  </footer>
+
 </body>
-
+</html>
 </html>
